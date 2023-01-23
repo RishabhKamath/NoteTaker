@@ -3,7 +3,7 @@ const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 
 notes.get('/', (req, res) => {
-    // Read the "database" file and return the JSON array inside.
+    // reading the json file
     fs.readFile('./db/db.json', {encoding: 'utf8'}, (err,db) => {
         if (!err) {
             res.status(200).json(JSON.parse(db));
